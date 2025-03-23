@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+     --off-white: #faeee7;
+     --white-shadow: #ddd;
+     --pinkish: #e7717d;
+     --neon-blue: #0056b3;
+     --clay: #7e685a;
+     --green: #afd275;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -8,7 +17,7 @@
 }
 
 body{
-    background-color: #faeee7;
+    background-color: var(--off-white);
     width: 100%;
     height: auto;
     overflow-x: hidden;
@@ -21,9 +30,9 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #f9f9f9;
+    background-color: white;
     border-radius: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--white-shadow);
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -32,13 +41,13 @@ body{
 
 .popup-menu p {
     margin-bottom: 10px;
-    color: #e7717d;
+    color: var(--pinkish);;
 }
 
 #closePopup {
     display: inline-block;
     padding: 8px 16px;
-    background-color: #007BFF;
+    background-color: var(--neon-blue);
     color: white;
     border: none;
     cursor: pointer;
@@ -46,23 +55,10 @@ body{
 }
 
 #closePopup:hover {
-    background-color: #0056b3;
+    background-color: var(--neon-blue);
 }
 
-header{
-    z-index: 889;
-    position: fixed;
-    background: linear-gradient(to right, #C2CAD0, #e7717d);
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: left;
-    transition: 0.2s ease;
-}
-
+/*
 .menu-btn{
     color: white;
     position: absolute;
@@ -78,7 +74,7 @@ header{
 }
 
 .menu-btn:hover {
-    color: #7e685a
+    color: var(--clay)
 }
 
 .menu-btn.active{
@@ -88,6 +84,22 @@ header{
     background-size: 25px;
     transition: 0.3s ease;
     filter: invert(1);
+}
+*/
+
+header{
+    z-index: 889;
+    position: fixed;
+    background: linear-gradient(to right, #C2CAD0, var(--pinkish));
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    transition: 0.2s ease;
+    flex-wrap: nowrap;
 }
 
 header.sticky{
@@ -110,15 +122,15 @@ header .navigation a{
 }
 
 header .navigation a:hover{
-    color: #7e685a;
+    color: var(--neon-blue);
 }
 
 header .sticky .navigation a:hover{
-    color: #7e685a;
+    color: var(--neon-blue);
 }
 
 section{
-    padding: 100px 200px;
+    padding: 100px 50px;
 }
 
 .image-holder img{
@@ -141,7 +153,7 @@ section{
 
 .section-title{
     position: relative;
-    color: #afd275;
+    color: var(--green);
     font-size: 2.2em;
     font-weight: 800;
     margin-bottom: 60px;
@@ -154,7 +166,7 @@ section{
     left: 50%;
     width: 140px;
     height: 4px;
-    background-color: #afd275;
+    background-color: var(--green);
     transform: translateX(-50%);
 }
 
@@ -166,13 +178,13 @@ section{
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: #afd275;
+    background-color: var(--green);
     transform: translateX(-50%);
 }
 
 .content-title{
     position: relative;
-    color: #7e685a;
+    color: var(--clay);
     font-size: 2.2em;
     font-weight: 800;
     margin-bottom: 60px;
@@ -183,10 +195,12 @@ section{
 .intro .content{
     position: relative;
     width: 100%;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .intro .content .col-left{
@@ -241,12 +255,12 @@ section{
     color: #333;
     text-decoration: none;
     border-radius: 5px;
-    background-color: #f4f4f4;
+    background-color: white;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 .social-link:hover {
-    background-color: #007BFF;
+    background-color: var(--neon-blue);
     color: white;
     transform: scale(1.05);
 }
@@ -279,82 +293,49 @@ section{
     }
 }
 
-@media(max-width: 768px){
-    .menu-btn {
-        font-size: 24px;
-        right: 15px;
-        top: 10px;
+/*For smaller screens*/
+@media (max-width: 720px) {
+
+    .content-title{
+        position: relative;
+        color: var(--clay);
+        font-size: 2.2em;
+        font-weight: 800;
+        margin-bottom: 60px;
+    }
+
+    .intro .content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .intro .content .col-left{
+        position: relative;
+        width: 45%;
+    }
+    
+    .intro .content .col-right{
+        position: relative;
+        width: 100%;
     }
 }
 
-@media (max-width:1040px) {
-    
-    header{
-        padding: 12px 20px;
+@media (orientation: portrait) {
+    /* Styles for phones in portrait mode */
+    body {
+        font-size: 16px;
+        padding: 20px;
     }
 
-    header.sticky{
-        padding: 10px 20px;
-    }
-
-    header .navigation{
-        display: none;
-    }
-
-    .menu-btn{
-        color: white;
-        position: absolute;
-        background-position: center;
-        background-size: 30px;
-        background-repeat: no-repeat;
-        width: 40px;
-        height: 40px;
-        right: 0;
-        margin: 0 20px;
-        cursor: pointer;
-        transition: 0.3s ease;
-    }
-
-    .menu-btn.active{
-        z-index: 999;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 25px;
-        transition: 0.3s ease;
-        filter: invert(1);
-    }
-
-    .navigation.active{
-        z-index: 889;
-        position: fixed;
-        background-color: white;
-        top: 0;
-        right: 0;
-        width: 380px;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .intro .content {
         flex-direction: column;
-        box-shadow: 0 5px 25px rgba(1 1 1/ 50%);
-        transition: 0.3s ease;
+        align-items: center;
     }
 
-    header .navigation a{
-        color: black;
-        font-size: 1.2em;
-        margin: 10px;
-        padding: 10px 40px;
-        border-radius: 5px;
-    }
-
-    header .navigation a:hover{
-        background-color: #afd275;
-        color: white;
-        transition: 0.3s ease;
-    }
-
-    section{
-        padding: 80px 20px;
+    .intro .content .col-left,
+    .intro .content .col-right {
+        width: 100%; /* Full width for each column */
+        margin-bottom: 20px; /* Add space between stacked items */
     }
 }
