@@ -139,6 +139,30 @@ header .sticky .navigation a:hover{
     height: auto;
 }
 
+.polaroid {
+    position: relative;
+    width: 100%;
+    min-height: 450px;
+    object-fit: cover;
+}
+
+.polaroid-img{
+    background:#fff;
+    padding: 1rem;
+    box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.2);
+    max-width: 200px;
+}
+
+.polaroid-img .img{
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+}
+
+.polaroid .caption{
+    text-align: center;
+}
+
 section{
     padding: 100px 50px;
 }
