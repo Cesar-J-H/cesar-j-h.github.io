@@ -121,12 +121,22 @@ header .navigation a{
     margin-left: 30px;
 }
 
-header .navigation a:hover{
+header .navigation a:hover,
+header .sticky .navigation a:hover{
     color: var(--neon-blue);
 }
 
-header .sticky .navigation a:hover{
-    color: var(--neon-blue);
+.background-heading{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.background-heading img{
+    width: 100%;
+    height: auto;
 }
 
 section{
@@ -219,10 +229,7 @@ section{
     min-height: 450px;
 }
 
-.intro .content .col-left .img-card img{
-    position: absolute;
-    top: 0;
-    left: 0;
+.img-card img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -237,6 +244,80 @@ section{
 
 .intro .content .col-right .paragraph-text{
     font-size: 1em;
+}
+
+/*education*/
+
+.education .content{
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    font-size: 0.8em;
+}
+
+.education{
+    position: relative;
+    font-size: 1em;
+}
+
+.education .content .education-card{
+    background-image: url("Images/crumpled paper-unsplash.jpg");
+    background-color: var(--pink);
+    background-blend-mode: overlay;
+    background-size: cover;
+    border-radius: 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    border-style: groove;
+    flex-wrap: wrap;
+    margin: 5%;
+}
+
+.education .content .education-card:nth-child(odd){
+    transform: translateX(-20%);
+}
+
+.education-card:nth-child(even){
+    transform: translateX(20%);
+}
+
+.education .content .education-card .left-card{
+    padding: 5%;
+    padding-right: 10%;
+    position: relative;
+    width: 40%;
+    height: 100%;
+    text-align: center;
+}
+
+.education .content .education-card .right-card{
+    box-sizing: border-box;
+    border-left: dashed;
+    padding: 5%;
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 3%;
+}
+
+.right-card .gpa{
+    align-self: flex-end;
+    margin-top: 2%;
+    margin-bottom: 10px;
+}
+
+.right-card ul{
+    align-self: flex-start;
 }
 
 /*contact*/
