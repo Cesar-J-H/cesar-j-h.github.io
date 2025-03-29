@@ -5,6 +5,7 @@
      --white-shadow: #ddd;
      --pinkish: #e7717d;
      --neon-blue: #0056b3;
+     --pastel-blue: #7cbbff;
      --clay: #7e685a;
      --green: #afd275;
 }
@@ -23,6 +24,7 @@ body{
     overflow-x: hidden;
 }
 
+/* Popup effects */
 .popup-menu {
     text-align: center;
     display: none;
@@ -127,7 +129,6 @@ header .sticky .navigation a:hover{
 }
 
 .background-heading{
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -139,40 +140,44 @@ header .sticky .navigation a:hover{
     height: auto;
 }
 
-.polaroid {
-    position: relative;
-    width: 100%;
-    min-height: 450px;
-    object-fit: cover;
-}
-
-.polaroid-img{
-    background:#fff;
-    padding: 1rem;
-    box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.2);
-    max-width: 200px;
-}
-
-.polaroid-img .img{
-    max-width: 200px;
-    width: 100%;
-    height: auto;
-}
-
-.polaroid .caption{
-    text-align: center;
-}
-
 section{
     padding: 100px 50px;
 }
 
-.image-holder img{
-    max-width: 200px;
-    min-width: 100px;
+/* Polaroid images effects*/
+
+.polaroid {
+    position: relative;
+    background:#fff;
+    display: inline-block;
+    width: 100%;
+    min-height: 450px;
+    object-fit: cover;
+    box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.polaroid-img{
+    padding: 1.2rem;
+}
+
+.polaroid-img img{
+    width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
+}
+
+.polaroid .caption{
+    font-size: 1.5rem;
+    color: var(--pastel-blue);
+    padding: 2%;
+    text-align: center;
+}
+
+@keyframes tilt {
+    0% { transform: rotate(0deg); }
+    100% {transform: rotate(10deg); }
 }
 
 /* Intro Heading */
@@ -245,19 +250,6 @@ section{
 .intro .content .col-right{
     position: relative;
     width: 50%;
-}
-
-.intro .content .col-left .img-card{
-    position: relative;
-    width: 100%;
-    min-height: 450px;
-}
-
-.img-card img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
 }
 
 .intro .content .col-right .content-title{
@@ -374,28 +366,6 @@ section{
     font-size: 24px; /* Icon size */
     margin-right: 10px; /* Space between icon and text */
     vertical-align: middle; /* Align icon with text */
-}
-
-@keyframes text-move {
-    0%,15%{
-        margin-top: 0px;
-    }
-    
-    25%,40%{
-        margin-top: -70px;
-    }
-    
-    50%,65%{
-        margin-top: -140px;
-    }
-    
-    75%,90%{
-        margin-top: -70px;
-    }
-    
-    100%{
-        margin-top: 0px;
-    }
 }
 
 /*For smaller screens*/
