@@ -11,11 +11,7 @@ window.addEventListener("scroll", function () {
     header.classList.toggle("sticky", window.scrollY > 0);
 });
 
-// Menu toggle button
-menuBtn.addEventListener("click", function () {
-    nav.classList.toggle("active"); // Show/hide navbar on click
-});
-
+console.log("Script");
 
 /*Experimenting with jquery*/
 $(document).ready(function() {
@@ -44,4 +40,12 @@ $(document).ready(function() {
             $('body').css('overflow', 'auto');
         }
     });
+
+    $(".polaroid").hover(function() {
+        let randomTilt = (Math.random() * 20 - 10).toFixed(2); // Random between -5 and 5 degrees
+        $(this).css("transform", `rotate(${randomTilt}deg) scale(1.025)`);
+    }, function() {
+        $(this).css("transform", "rotate(0deg) scale(1)"); // Reset on mouse leave
+    });
+    
 });
