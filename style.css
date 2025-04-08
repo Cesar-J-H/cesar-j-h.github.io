@@ -129,15 +129,13 @@ header .sticky .navigation a:hover{
 }
 
 .background-heading{
-    top: 0;
-    left: 0;
     width: 100%;
     z-index: 0;
 }
 
 .background-heading img{
     width: 100%;
-    height: auto;
+    max-height: 300px;
 }
 
 section{
@@ -337,7 +335,6 @@ section{
 }
 
 /*contact*/
-
 .social-links {
     list-style-type: none;
     padding: 0;
@@ -396,8 +393,8 @@ section{
     }
 }
 
+/* Styles for phones in portrait mode */
 @media (orientation: portrait) {
-    /* Styles for phones in portrait mode */
     body {
         font-size: 16px;
         padding: 20px;
