@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/CesarJH/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cesarjh</title>
+    <script>
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect !== location.href) {
+        history.replaceState(null, null, redirect);
+      }
+    </script>
+    <script type="module" crossorigin src="/CesarJH/assets/index-DDAPIaRX.js"></script>
+    <link rel="stylesheet" crossorigin href="/CesarJH/assets/index-ZInw_rct.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
