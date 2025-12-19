@@ -5,15 +5,9 @@ const Home: React.FC = () => {
   return (
     <section className="max-w-6xl mx-auto px-6 py-20">
       {/* Hero Section */}
-      <div className="bg-blue-500 md:bg-green-500 p-4 text-white">
-        If this is BLUE, you're on mobile view. If GREEN, you're on desktop view.
-      </div>
-      <div className="bg-red-500 p-8 text-white text-2xl mb-8">
-        RED BOX - If you see a bright red box, Tailwind is 100% working
-      </div>
       <div className="flex flex-col items-center text-center space-y-6">
         {/* Profile Image - REPLACE WITH YOUR OWN */}
-        <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-blue-500 shadow-xl">
+        <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-teal shadow-xl">
           <img
             src="/path-to-your-image.jpg"
             alt="Cesar J. H."
@@ -28,7 +22,7 @@ const Home: React.FC = () => {
         
         {/* Name and Title */}
         <div className="space-y-2">
-          <h1 className="text-9xl md:text-9xl font-bold text-white">
+          <h1 className="text-9xl md:text-9xl font-bold text-teal">
             Cesar J. H.
           </h1>
           <p className="text-xl md:text-2xl text-blue-400 font-light">
