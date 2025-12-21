@@ -11,7 +11,8 @@ export default {
         sand: '#F6F1EB',
         teal: '#2FA4A9',
         navy: '#0F172A',
-        lightBlue: '#7482A4'
+        lightBlue: '#2555cfff',
+        lighterBlue: '#536cacff'
       },
     },
   },

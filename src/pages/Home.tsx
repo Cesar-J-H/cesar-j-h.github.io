@@ -1,15 +1,16 @@
 import React from 'react';
 import { Code2, Briefcase, MapPin, Mail, ExternalLink } from 'lucide-react';
+import profileImage from '../assets/travel/IMG_3743.jpg';
 
 const Home: React.FC = () => {
   return (
     <section className="max-w-6xl mx-auto px-6 py-20">
       {/* Hero Section */}
       <div className="flex flex-col items-center text-center space-y-6">
-        {/* Profile Image - REPLACE WITH YOUR OWN */}
+        {/* Profile Image */}
         <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-teal shadow-xl">
           <img
-            src="/path-to-your-image.jpg"
+            src={profileImage}
             alt="Cesar J. H."
             className="w-full h-full object-cover"
             onError={(e) => {
@@ -25,17 +26,18 @@ const Home: React.FC = () => {
           <h1 className="text-9xl md:text-9xl font-bold text-teal">
             Cesar J. H.
           </h1>
-          <p className="text-xl md:text-2xl text-blue-400 font-light">
-            Full Stack Developer
+          <p className="text-xl md:text-2xl text-lightBlue font-light">
+            Aspirational Wayfinder
           </p>
         </div>
 
-        {/* Brief Introduction */}
-        <p className="text-lg text-slate-300 max-w-2xl leading-relaxed">
-          Passionate about building elegant solutions to complex problems. 
-          I specialize in creating scalable web applications with modern technologies 
-          and clean, maintainable code.
+        {/* Intro */}
+        <p className="text-lg text-lighterBlue max-w-2xl leading-relaxed">
+          Hello everyone! Welcome to my own personal website. As you can see, I'm still in the process of building it out. Like most things in life, everything is under constant change.
+          Feel free to explore and check back regularly through the growing pains!
+          Maybe you'll be surprised by something new each time you visit. No matter how small or hidden!
         </p>
+        
 
         {/* Social Links */}
         <div className="flex gap-4 pt-4">
