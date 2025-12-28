@@ -1,6 +1,6 @@
 import React from 'react';
 import { Code2, Briefcase, MapPin, Mail, ExternalLink } from 'lucide-react';
-import profileImage from '../assets/travel/IMG_3743.jpg';
+import profileImage from '../assets/travel/IMG_3770.jpg'
 
 const Home: React.FC = () => {
   return (
