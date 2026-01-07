@@ -5,7 +5,7 @@ const LinkCableAnimation = () => {
     <div className="w-full max-w-2xl mx-auto py-8">
         {/* Heading */}
         <div className="text-center mt-6">
-            <h2 className="text-3xl font-bold text-lightBlue mb-2">Let's Connect!</h2>
+            <h2 className="text-5xl font-bold text-lightBlue mb-2">Let's Connect!</h2>
         </div>
       <svg
         viewBox="0 0 600 200"
@@ -176,7 +176,7 @@ const LinkCableAnimation = () => {
       </svg>
       
       <div className="text-center mt-6">
-        <p className="text-slate-400">Ready to collaborate? Let's link up and build something awesome together!</p>
+        <p className="text-slate-400">Want to reach out? Link up with me to start Level 1!</p>
       </div>
     </div>
   );

@@ -1,5 +1,7 @@
 import React from 'react';
-import { Code2, Briefcase, MapPin, Mail, ExternalLink } from 'lucide-react';
+import { MapPin, ExternalLink } from 'lucide-react';
+import { FaExplosion } from 'react-icons/fa6';
+import { GrGrow } from 'react-icons/gr';
 import profileImage from '../assets/travel/IMG_3770.jpg'
 
 const Home: React.FC = () => {
@@ -37,34 +39,6 @@ const Home: React.FC = () => {
           Feel free to explore and check back regularly through the growing pains!
           Maybe you'll be surprised by something new each time you visit. No matter how small or hidden!
         </p>
-        
-
-        {/* Social Links */}
-        <div className="flex gap-4 pt-4">
-          <a
-            href="https://github.com/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors"
-            aria-label="GitHub Profile"
-          >
-          </a>
-          <a
-            href="https://linkedin.com/in/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors"
-            aria-label="LinkedIn Profile"
-          >
-          </a>
-          <a
-            href="mailto:your.email@example.com"
-            className="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors"
-            aria-label="Email"
-          >
-            <Mail className="w-6 h-6 text-slate-300" />
-          </a>
-        </div>
 
         {/* CTA Buttons */}
         <div className="flex gap-4 pt-6">
@@ -77,36 +51,49 @@ const Home: React.FC = () => {
           </a>
           <a
             href="/contact"
-            className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-lg font-medium transition-colors"
+            className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors flex items-center gap-2"
           >
             Get in Touch
+            <ExternalLink className="w-4 h-4" />
           </a>
         </div>
       </div>
 
       {/* Quick Stats/Skills */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
-        <div className="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-blue-500 transition-colors">
-          <Code2 className="w-8 h-8 text-blue-400 mb-3" />
-          <h3 className="text-xl font-semibold text-white mb-2">Clean Code</h3>
-          <p className="text-slate-400">
-            Writing maintainable, scalable, and efficient code is my priority.
+        <div className="
+          bg-coral p-6 rounded-xl
+          border border-red shadow-xl 
+          hover:shadow-2xl hover:border-blue-500 hover:-translate-y-1 
+          transition-all duration-300">
+          <FaExplosion className="w-8 h-8 text-blue-400 mb-3" />
+          <h3 className="text-xl font-semibold text-blue-400 mb-2">Fail, Learn, Repeat</h3>
+          <p className="text-white">
+            Failure is a constant yet invaluable teacher. Some of the greatest inventions came from mistakes. Seeking perfection often hinders progress.
+          </p>
+        </div>
+
+        <div className="
+          bg-coral p-6 rounded-xl 
+          border border-red shadow-xl 
+          hover:shadow-2xl hover:border-purple-500 hover:-translate-y-1 
+          transition-all duration-300">
+          <GrGrow className="w-8 h-8 text-purple-400 mb-3" />
+          <h3 className="text-xl font-semibold text-purple-400 mb-2">Changes Big and Small</h3>
+          <p className="text-white">
+            Even the smallest wins can feel like big victories. 
           </p>
         </div>
         
-        <div className="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-purple-500 transition-colors">
-          <Briefcase className="w-8 h-8 text-purple-400 mb-3" />
-          <h3 className="text-xl font-semibold text-white mb-2">Full Stack</h3>
-          <p className="text-slate-400">
-            From database design to responsive frontends, I handle it all.
-          </p>
-        </div>
-        
-        <div className="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-green-500 transition-colors">
+        <div className="
+          bg-coral p-6 rounded-xl 
+          border border-red shadow-xl 
+          hover:shadow-2xl hover:border-green-500 hover:-translate-y-1 
+          transition-all duration-300">
           <MapPin className="w-8 h-8 text-green-400 mb-3" />
-          <h3 className="text-xl font-semibold text-white mb-2">Remote Ready</h3>
-          <p className="text-slate-400">
-            Experienced in collaborating with distributed teams globally.
+          <h3 className="text-xl font-semibold text-green-400 mb-2">Having Fun</h3>
+          <p className="text-white">
+            The journey is much more enjoyable when you learn to enjoy the views. Tunnel-vision rarely leads to happiness so why limit yourself when there is so much to explore? Take the road less traveled and you might find a better destination at the end.
           </p>
         </div>
       </div>
