@@ -10,45 +10,56 @@ const NavBar: React.FC = () => {
             <div className="container mx-auto">
                 {/* Logo and Menu Toggle */}
                 <div className="flex justify-between items-center">
-                    <Link to= "/Home" className="text-3xl font-bold">Home</Link>
-                    <Link to= "/About" className="text-2xl font-bold">About</Link>
-                    <Link to= "/Projects" className="text-2xl font-bold">Projects</Link>
-                    <Link to= "/Resume" className="text-2xl font-bold">Resume</Link>
-                    <Link to= "/Travel" className="text-2xl font-bold">Travel</Link>
-                    <Link to= "/Contact" className="text-2xl font-bold">Contact</Link>
-                </div>
+                    <Link to="/Home" className="text-2xl md:text-3xl font-bold">Home</Link>
 
-                {/* Mobile Menu Button*/}
-                <button
-                    onClick={() => setOpen(!open)}
-                    className="md:hidden absolute top-4 right-4 focus:outline-none"
-                >
-                    {isOpen ? <X size={24} /> : <Menu size={24} />}
-                </button>
+                    {/* Desktop links (hidden on small screens) */}
+                    <div className="hidden md:flex items-center gap-8">
+                        <Link to="/About" className="text-xl font-medium">About</Link>
+                        <Link to="/Projects" className="text-xl font-medium">Projects</Link>
+                        <Link to="/Resume" className="text-xl font-medium">Resume</Link>
+                        <Link to="/Travel" className="text-xl font-medium">Travel</Link>
+                        <Link to="/Contact" className="text-xl font-medium">Contact</Link>
+                    </div>
+
+                    {/* Mobile Menu Button (visible on small screens) */}
+                    <button
+                        onClick={() => setOpen(!isOpen)}
+                        className="md:hidden focus:outline-none"
+                        aria-label="Toggle menu"
+                    >
+                        {isOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
+                </div>
             </div>
             {/* Mobile Nav Menu */}
-            {isOpen && (
-                <div className="md:hidden mt-4">
-                    <Link to="/Home" className="block py-2" onClick={() => setOpen(false)}>
-                    Home
-                    </Link>
-                    <Link to="/About" className="block py-2" onClick={() => setOpen(false)}>
-                    About
-                    </Link>
-                    <Link to="/Projects" className="block py-2" onClick={() => setOpen(false)}>
-                    Projects
-                    </Link>
-                    <Link to="/Resume" className="block py-2" onClick={() => setOpen(false)}>
-                    Resume
-                    </Link>
-                    <Link to="/Travel" className="block py-2" onClick={() => setOpen(false)}>
-                    Travel
-                    </Link>
-                    <Link to="/Contact" className="block py-2" onClick={() => setOpen(false)}>
-                    Contact
-                    </Link>
-                </div>
-            )}
+                        {isOpen && (
+                                <div className="md:hidden mt-4 space-y-2">
+                                        <Link to="/Home" className="flex items-center gap-3 py-2 text-lg" onClick={() => setOpen(false)}>
+                                            <Home size={18} />
+                                            <span>Home</span>
+                                        </Link>
+                                        <Link to="/About" className="flex items-center gap-3 py-2 text-lg" onClick={() => setOpen(false)}>
+                                            <User size={18} />
+                                            <span>About</span>
+                                        </Link>
+                                        <Link to="/Projects" className="flex items-center gap-3 py-2 text-lg" onClick={() => setOpen(false)}>
+                                            <Briefcase size={18} />
+                                            <span>Projects</span>
+                                        </Link>
+                                        <Link to="/Resume" className="flex items-center gap-3 py-2 text-lg" onClick={() => setOpen(false)}>
+                                            <FileText size={18} />
+                                            <span>Resume</span>
+                                        </Link>
+                                        <Link to="/Travel" className="flex items-center gap-3 py-2 text-lg" onClick={() => setOpen(false)}>
+                                            <MapPin size={18} />
+                                            <span>Travel</span>
+                                        </Link>
+                                        <Link to="/Contact" className="flex items-center gap-3 py-2 text-lg" onClick={() => setOpen(false)}>
+                                            <Mail size={18} />
+                                            <span>Contact</span>
+                                        </Link>
+                                </div>
+                        )}
         </nav>
     );
 }

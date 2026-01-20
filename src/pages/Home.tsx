@@ -59,13 +59,20 @@ const Home: React.FC = () => {
         </div>
       </div>
 
+      <div className="mt-12 mb-6 flex-col items-center gap-3">
+        <h2 className="text-2xl font-bold text-center bg-gradient-to-r from-teal via-lightBlue to-coral bg-clip-text text-transparent">
+          Personal Philosophies
+        </h2>
+      </div>
+
       {/* Quick Stats/Skills */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
         <div className="
           bg-coral p-6 rounded-xl
           border border-red shadow-xl 
           hover:shadow-2xl hover:border-blue-500 hover:-translate-y-1 
-          transition-all duration-300">
+          transition-all duration-300"
+        >
           <FaExplosion className="w-8 h-8 text-blue-400 mb-3" />
           <h3 className="text-xl font-semibold text-blue-400 mb-2">Fail, Learn, Repeat</h3>
           <p className="text-white">
@@ -77,11 +84,12 @@ const Home: React.FC = () => {
           bg-coral p-6 rounded-xl 
           border border-red shadow-xl 
           hover:shadow-2xl hover:border-purple-500 hover:-translate-y-1 
-          transition-all duration-300">
+          transition-all duration-300"
+        >
           <GrGrow className="w-8 h-8 text-purple-400 mb-3" />
           <h3 className="text-xl font-semibold text-purple-400 mb-2">Changes Big and Small</h3>
           <p className="text-white">
-            Even the smallest wins can feel like big victories. 
+            Even the smallest wins can feel like big victories. Growth is growth no matter the size. Embrace change as an opportunity to evolve and improve, both personally and professionally.
           </p>
         </div>
         
@@ -89,7 +97,8 @@ const Home: React.FC = () => {
           bg-coral p-6 rounded-xl 
           border border-red shadow-xl 
           hover:shadow-2xl hover:border-green-500 hover:-translate-y-1 
-          transition-all duration-300">
+          transition-all duration-300"
+        >
           <MapPin className="w-8 h-8 text-green-400 mb-3" />
           <h3 className="text-xl font-semibold text-green-400 mb-2">Having Fun</h3>
           <p className="text-white">
