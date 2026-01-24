@@ -6,6 +6,7 @@ import profileImage from '../assets/travel/IMG_3770.jpg'
 
 const Home: React.FC = () => {
   return (
+    
     <section className="max-w-6xl mx-auto px-6 py-20">
       {/* Hero Section */}
       <div className="flex flex-col items-center text-center space-y-6">
