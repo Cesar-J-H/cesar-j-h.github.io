@@ -6,7 +6,7 @@ const NavBar: React.FC = () => {
     const [isOpen, setOpen] = useState(false);
 
     return (
-        <nav className="bg-coral text-sand p-4 fixed w-full top-0 z-50">
+        <nav className="bg-coral/80 backdrop-blur-md text-white p-4 fixed w-full top-0 z-50">
             <div className="container mx-auto">
                 {/* Logo and Menu Toggle */}
                 <div className="flex justify-between items-center">
@@ -33,28 +33,28 @@ const NavBar: React.FC = () => {
             </div>
             {/* Mobile Nav Menu */}
                         {isOpen && (
-                                <div className="md:hidden mt-4 space-y-2">
-                                        <Link to="/Home" className="flex items-center gap-3 py-2 text-lg" onClick={() => setOpen(false)}>
+                                <div className="md:hidden mt-4 bg-coral/95 backdrop-blur-md rounded-lg p-4">
+                                        <Link to="/Home" className="block py-2" onClick={() => setOpen(false)}>
                                             <Home size={18} />
                                             <span>Home</span>
                                         </Link>
-                                        <Link to="/About" className="flex items-center gap-3 py-2 text-lg" onClick={() => setOpen(false)}>
+                                        <Link to="/About" className="block py-2" onClick={() => setOpen(false)}>
                                             <User size={18} />
                                             <span>About</span>
                                         </Link>
-                                        <Link to="/Projects" className="flex items-center gap-3 py-2 text-lg" onClick={() => setOpen(false)}>
+                                        <Link to="/Projects" className="block py-2" onClick={() => setOpen(false)}>
                                             <Briefcase size={18} />
                                             <span>Projects</span>
                                         </Link>
-                                        <Link to="/Resume" className="flex items-center gap-3 py-2 text-lg" onClick={() => setOpen(false)}>
+                                        <Link to="/Resume" className="block py-2" onClick={() => setOpen(false)}>
                                             <FileText size={18} />
                                             <span>Resume</span>
                                         </Link>
-                                        <Link to="/Travel" className="flex items-center gap-3 py-2 text-lg" onClick={() => setOpen(false)}>
+                                        <Link to="/Travel" className="block py-2" onClick={() => setOpen(false)}>
                                             <MapPin size={18} />
                                             <span>Travel</span>
                                         </Link>
-                                        <Link to="/Contact" className="flex items-center gap-3 py-2 text-lg" onClick={() => setOpen(false)}>
+                                        <Link to="/Contact" className="block py-2" onClick={() => setOpen(false)}>
                                             <Mail size={18} />
                                             <span>Contact</span>
                                         </Link>

@@ -10,6 +10,7 @@ export default {
         red: '#a44444ff',
         coral: '#FFBAA3',
         sand: '#F6F1EB',
+        white: '#FFFFFF',
         teal: '#2FA4A9',
         navy: '#0F172A',
         lightBlue: '#2555cfff',
