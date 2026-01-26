@@ -11,6 +11,11 @@ import parasiteImage from '../assets/favorites/movies/Parasite.jpeg'
 import killBillImage from '../assets/favorites/movies/Kill Bill.webp'
 import silentVoiceImage from '../assets/favorites/movies/A Silent Voice.webp'
 
+import frierenImage from '../assets/favorites/shows/Frieren.jpg'
+import goodPlaceImage from '../assets/favorites/shows/The Good Place.jpg'
+import fmaImage from '../assets/favorites/shows/Fullmetal Alchemist Brotherhood.webp'
+import hillHouseImage from '../assets/favorites/shows/Hill House.jpg'
+
 const About: React.FC = () => {
   return (
     <div className="min-h-screen bg-sand">
@@ -25,7 +30,7 @@ const About: React.FC = () => {
           </div>
 
           {/* Main About Content */}
-          <div className="grid md:grid-cols-2 gap-12 mb-20">
+          <div className="grid lg:grid-cols-2 gap-12 mb-20 md:items-start">
             {/* Left Column - Image and Quick Facts */}
             <div className="space-y-8">
               <div className="relative">
@@ -59,7 +64,7 @@ const About: React.FC = () => {
             </div>
 
             {/* Right Column - Intro */}
-            <div className="space-y-6">
+            <div className="space-y-8">
               <div className="bg-white p-8 rounded-xl border-2 border-coral shadow-lg">
                 <h2 className="text-3xl font-bold text-lightBlue mb-6">CJH 100: Intro</h2>
                 <div className="space-y-4 text-navy leading-relaxed">
@@ -81,9 +86,21 @@ const About: React.FC = () => {
                     I don't believe that there's a 'right' way to do anything. There is no set path to success or happiness.
                     I've made it this far by being 'wrong' and stumbling around in the dark.
                   </p>
+
+                  {/* Currently Section */}
+                  <div className="bg-sand/50 p-5 rounded-lg mt-6">
+                    <h3 className="font-bold text-teal mb-3 text-xl">Currently...</h3>
+                    <ul className="space-y-2">
+                      <li>🐶 Debating what chew toys I should buy my dog</li>
+                      <li>🎮 Celebrating my gacha luck</li>
+                      <li>💭 Wondering what my next project should be</li>
+                      <li>❄️ Embracing Seattle cold season</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
 
           {/* Bottom - Info */}
           <div className="bg-white p-8 rounded-xl border-2 border-coral shadow-lg mb-20">
@@ -108,8 +125,6 @@ const About: React.FC = () => {
 
               </p>
             </div>
-          </div>
-
           </div>
 
           {/* Favorites Section */}
@@ -237,7 +252,7 @@ const About: React.FC = () => {
                   <div className="group cursor-pointer">
                     <div className="aspect-[2/3] rounded-lg overflow-hidden mb-2 border-2 border-coral">
                       <img 
-                        src="" 
+                        src={hillHouseImage}
                         alt="Haunting of Hill House"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                       />
@@ -249,7 +264,7 @@ const About: React.FC = () => {
                   <div className="group cursor-pointer">
                     <div className="aspect-[2/3] rounded-lg overflow-hidden mb-2 border-2 border-coral">
                       <img 
-                        src="" 
+                        src={fmaImage} 
                         alt="Fullmetal Alchemist: Brotherhood"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                       />
@@ -261,8 +276,8 @@ const About: React.FC = () => {
                   <div className="group cursor-pointer">
                     <div className="aspect-[2/3] rounded-lg overflow-hidden mb-2 border-2 border-coral">
                       <img 
-                        src="" 
-                        alt="Avatar: The Good Place"
+                        src={goodPlaceImage}
+                        alt="The Good Place"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                       />
                     </div>
@@ -273,7 +288,7 @@ const About: React.FC = () => {
                   <div className="group cursor-pointer">
                     <div className="aspect-[2/3] rounded-lg overflow-hidden mb-2 border-2 border-coral">
                       <img 
-                        src="" 
+                        src={frierenImage}
                         alt="Frieren: Beyond Journey's End"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                       />
