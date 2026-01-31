@@ -16,10 +16,9 @@ const Contact: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [errors, setErrors] = useState<{[key: string]: string}>({});
 
-  // Replace these with your actual EmailJS credentials
-  const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-  const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+  const EMAILJS_SERVICE_ID = 'placeholder';
+  const EMAILJS_TEMPLATE_ID = 'placeholder';
+  const EMAILJS_PUBLIC_KEY = 'placeholder';
 
   const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB per file
   const MAX_TOTAL_SIZE = 10 * 1024 * 1024; // 10MB total
@@ -236,7 +235,7 @@ const Contact: React.FC = () => {
                 className={`w-full px-4 py-3 bg-white border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal transition-all ${
                   errors.email ? 'border-red-500' : 'border-coral'
                 }`}
-                placeholder="your.email@example.com"
+                placeholder="yourEmail@example.com"
               />
               {errors.email && (
                 <p className="mt-1 text-red-500 text-sm flex items-center gap-1">
@@ -417,7 +416,7 @@ const Contact: React.FC = () => {
       <div className="flex flex-col md:flex-row gap-6 justify-center items-center max-w-3xl mx-auto">
         {/* GitHub */}
         <a
-          href="https://github.com/yourusername"
+          href="https://github.com/cesar-j-h"
           target="_blank"
           rel="noopener noreferrer"
           className="w-full md:w-auto flex items-center gap-4 p-6 bg-white hover:bg-coral rounded-xl transition-all hover:scale-105 border-2 border-coral shadow-lg"
@@ -432,7 +431,7 @@ const Contact: React.FC = () => {
 
         {/* LinkedIn */}
         <a
-          href="https://linkedin.com/in/yourusername"
+          href="https://linkedin.com/in/cesar-j-herrera"
           target="_blank"
           rel="noopener noreferrer"
           className="w-full md:w-auto flex items-center gap-4 p-6 bg-white hover:bg-coral rounded-xl transition-all hover:scale-105 border-2 border-coral shadow-lg"

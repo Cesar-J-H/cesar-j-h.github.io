@@ -1,5 +1,5 @@
 import React from 'react';
-import profileImage from '../assets/travel/IMG_3770.jpg';
+import profileImage from '../assets/travel/londonTowerBridge.jpg';
 
 import honkaiImage from '../assets/favorites/games/Honkai Star Rail.png'
 import stardewImage from '../assets/favorites/games/Stardew Valley.jpg'
@@ -335,10 +335,10 @@ const About: React.FC = () => {
               <div>
                 <h3 className="text-xl font-bold text-teal mb-4">Technical Skills</h3>
                 <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 bg-coral text-navy rounded-full font-medium">JavaScript</span>
+                  <span className="px-4 py-2 bg-coral text-navy rounded-full font-medium">Java</span>
                   <span className="px-4 py-2 bg-coral text-navy rounded-full font-medium">TypeScript</span>
+                  <span className="px-4 py-2 bg-coral text-navy rounded-full font-medium">SQL</span>
                   <span className="px-4 py-2 bg-coral text-navy rounded-full font-medium">React</span>
-                  <span className="px-4 py-2 bg-coral text-navy rounded-full font-medium">Node.js</span>
                   <span className="px-4 py-2 bg-coral text-navy rounded-full font-medium">HTML/CSS</span>
                   <span className="px-4 py-2 bg-coral text-navy rounded-full font-medium">Tailwind</span>
                   <span className="px-4 py-2 bg-coral text-navy rounded-full font-medium">Git</span>
@@ -350,6 +350,7 @@ const About: React.FC = () => {
                   <span className="px-4 py-2 bg-lightBlue text-white rounded-full font-medium">Travel</span>
                   <span className="px-4 py-2 bg-lightBlue text-white rounded-full font-medium">Gaming</span>
                   <span className="px-4 py-2 bg-lightBlue text-white rounded-full font-medium">Reading</span>
+                  <span className="px-4 py-2 bg-lightBlue text-white rounded-full font-medium">Running</span>
                 </div>
               </div>
             </div>

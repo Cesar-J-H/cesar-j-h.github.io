@@ -2,7 +2,7 @@ import React from 'react';
 import { MapPin, ExternalLink } from 'lucide-react';
 import { FaExplosion } from 'react-icons/fa6';
 import { GrGrow } from 'react-icons/gr';
-import profileImage from '../assets/travel/IMG_3770.jpg'
+import profileImage from '../assets/travel/londonTowerBridge.jpg'
 
 const Home: React.FC = () => {
   return (
