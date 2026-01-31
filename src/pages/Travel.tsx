@@ -100,11 +100,14 @@ const Travel: React.FC = () => {
   };
 
   const visitedCountries = [
-    { name: 'United Kingdom', cities: ['London'], flag: '🇬🇧' },
     { name: 'United States', cities: ['Seattle', 'Los Angeles', 'San Diego', 'San Francisco', 'Portland', 'Las Vegas'], flag: '🇺🇸' },
-    { name: 'France', cities: ['Paris', 'Versailles'], flag: '🇫🇷' },
+    { name: 'Mexico', cities: ['Mexico City', 'Guadalajara', 'Guanajuato', 'Cancun', 'Puerto Vallarta', 'Tulum', 'Acapulco'], flag: '🇲🇽' },
+    { name: 'Canada', cities: ['Vancouver'], flag: '🇨🇦' },
+    { name: 'United Kingdom', cities: ['London'], flag: '🇬🇧' },
+    { name: 'France', cities: ['Paris'], flag: '🇫🇷' },
     { name: 'Netherlands', cities: ['Amsterdam'], flag: '🇳🇱' },
-    { name: 'Mexico', cities: ['Mexico City', 'Guadalajara', 'Guanajuato', 'Cancun'], flag: '🇲🇽' },
+    { name: 'Italy', cities: ['Rome'], flag: '🇮🇹' },
+
   ];
 
   // Pan handlers
