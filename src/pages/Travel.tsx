@@ -107,7 +107,6 @@ const Travel: React.FC = () => {
     { name: 'France', cities: ['Paris'], flag: '🇫🇷' },
     { name: 'Netherlands', cities: ['Amsterdam'], flag: '🇳🇱' },
     { name: 'Italy', cities: ['Rome'], flag: '🇮🇹' },
-
   ];
 
   // Pan handlers
