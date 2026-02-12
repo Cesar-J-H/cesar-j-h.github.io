@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LinkCableAnimation from '../components/LinkCable';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
-import { Mail, Send, CheckCircle, AlertCircle, Paperclip, X } from 'lucide-react';
+import { Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 const Contact: React.FC = () => {
@@ -12,23 +12,12 @@ const Contact: React.FC = () => {
     message: ''
   });
   
-  const [attachments, setAttachments] = useState<File[]>([]);
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [errors, setErrors] = useState<{[key: string]: string}>({});
 
-  const EMAILJS_SERVICE_ID = 'placeholder';
-  const EMAILJS_TEMPLATE_ID = 'placeholder';
-  const EMAILJS_PUBLIC_KEY = 'placeholder';
-
-  const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB per file
-  const MAX_TOTAL_SIZE = 10 * 1024 * 1024; // 10MB total
-  const ALLOWED_TYPES = [
-    'image/jpeg', 'image/png', 'image/gif', 'image/webp',
-    'application/pdf',
-    'application/msword',
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-    'text/plain'
-  ];
+  const EMAILJS_SERVICE_ID = 'service_ut5ys6r';
+  const EMAILJS_TEMPLATE_ID = 'template_mer54cu';
+  const EMAILJS_PUBLIC_KEY = 'KF4O6EarqdaSwKYM7';
 
   const validateForm = () => {
     const newErrors: {[key: string]: string} = {};
@@ -71,57 +60,6 @@ const Contact: React.FC = () => {
     }
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = Array.from(e.target.files || []);
-    const newErrors: {[key: string]: string} = {};
-
-    // Check individual file sizes and types
-    const validFiles = files.filter(file => {
-      if (file.size > MAX_FILE_SIZE) {
-        newErrors.attachments = `${file.name} exceeds 5MB limit`;
-        return false;
-      }
-      if (!ALLOWED_TYPES.includes(file.type)) {
-        newErrors.attachments = `${file.name} is not an allowed file type`;
-        return false;
-      }
-      return true;
-    });
-
-    // Check total size
-    const currentSize = attachments.reduce((sum, f) => sum + f.size, 0);
-    const newSize = validFiles.reduce((sum, f) => sum + f.size, 0);
-    
-    if (currentSize + newSize > MAX_TOTAL_SIZE) {
-      newErrors.attachments = 'Total attachment size cannot exceed 10MB';
-      setErrors(prev => ({ ...prev, ...newErrors }));
-      return;
-    }
-
-    setAttachments(prev => [...prev, ...validFiles]);
-    setErrors(prev => ({ ...prev, ...newErrors }));
-    
-    // Reset file input
-    e.target.value = '';
-  };
-
-  const removeAttachment = (index: number) => {
-    setAttachments(prev => prev.filter((_, i) => i !== index));
-    setErrors(prev => {
-      const newErrors = { ...prev };
-      delete newErrors.attachments;
-      return newErrors;
-    });
-  };
-
-  const formatFileSize = (bytes: number) => {
-    if (bytes === 0) return '0 Bytes';
-    const k = 1024;
-    const sizes = ['Bytes', 'KB', 'MB'];
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -133,34 +71,12 @@ const Contact: React.FC = () => {
     
     try {
       // Prepare template parameters
-      const templateParams: any = {
+      const templateParams = {
         from_name: formData.name,
         reply_to: formData.email,
         subject: formData.subject,
         message: formData.message,
       };
-
-      // Convert attachments to base64 if any
-      if (attachments.length > 0) {
-        const attachmentPromises = attachments.map(file => {
-          return new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.onload = () => {
-              const base64 = (reader.result as string).split(',')[1];
-              resolve({
-                name: file.name,
-                data: base64,
-                type: file.type
-              });
-            };
-            reader.onerror = reject;
-            reader.readAsDataURL(file);
-          });
-        });
-
-        const attachmentData = await Promise.all(attachmentPromises);
-        templateParams.attachments = attachmentData;
-      }
 
       await emailjs.send(
         EMAILJS_SERVICE_ID,
@@ -171,7 +87,6 @@ const Contact: React.FC = () => {
       
       setStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
-      setAttachments([]);
       setTimeout(() => setStatus('idle'), 5000);
     } catch (error) {
       console.error('EmailJS Error:', error);
@@ -235,7 +150,7 @@ const Contact: React.FC = () => {
                 className={`w-full px-4 py-3 bg-white border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal transition-all ${
                   errors.email ? 'border-red-500' : 'border-coral'
                 }`}
-                placeholder="yourEmail@example.com"
+                placeholder="your.email@example.com"
               />
               {errors.email && (
                 <p className="mt-1 text-red-500 text-sm flex items-center gap-1">
@@ -293,69 +208,6 @@ const Contact: React.FC = () => {
               )}
             </div>
 
-            {/* File Attachment Field */}
-            <div>
-              <label htmlFor="attachments" className="block text-lightBlue font-semibold mb-2">
-                Attachments (Optional)
-              </label>
-              <div className="space-y-3">
-                <label 
-                  htmlFor="file-upload"
-                  className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-white border-2 border-coral rounded-lg cursor-pointer hover:bg-coral hover:text-white transition-all"
-                >
-                  <Paperclip className="w-5 h-5" />
-                  <span className="font-medium">Choose Files</span>
-                  <input
-                    id="file-upload"
-                    type="file"
-                    multiple
-                    onChange={handleFileChange}
-                    className="hidden"
-                    accept=".jpg,.jpeg,.png,.gif,.webp,.pdf,.doc,.docx,.txt"
-                  />
-                </label>
-                
-                {/* File List */}
-                {attachments.length > 0 && (
-                  <div className="space-y-2">
-                    {attachments.map((file, index) => (
-                      <div 
-                        key={index}
-                        className="flex items-center justify-between p-3 bg-white border-2 border-coral rounded-lg"
-                      >
-                        <div className="flex items-center gap-2 flex-1 min-w-0">
-                          <Paperclip className="w-4 h-4 text-teal flex-shrink-0" />
-                          <span className="text-sm text-navy truncate">{file.name}</span>
-                          <span className="text-xs text-lighterBlue flex-shrink-0">
-                            ({formatFileSize(file.size)})
-                          </span>
-                        </div>
-                        <button
-                          type="button"
-                          onClick={() => removeAttachment(index)}
-                          className="ml-2 p-1 hover:bg-red-100 rounded transition-colors flex-shrink-0"
-                          aria-label="Remove file"
-                        >
-                          <X className="w-4 h-4 text-red-500" />
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                )}
-                
-                {errors.attachments && (
-                  <p className="mt-1 text-red-500 text-sm flex items-center gap-1">
-                    <AlertCircle className="w-4 h-4" />
-                    {errors.attachments}
-                  </p>
-                )}
-                
-                <p className="text-xs text-lighterBlue">
-                  Max 5MB per file, 10MB total. Accepted: Images (JPG, PNG, GIF, WebP), PDF, Word, Text
-                </p>
-              </div>
-            </div>
-
             {/* Submit Button */}
             <button
               type="submit"
@@ -384,7 +236,7 @@ const Contact: React.FC = () => {
               <div className="p-4 bg-green-100 border-2 border-green-500 rounded-lg flex items-center gap-3">
                 <CheckCircle className="w-6 h-6 text-green-600" />
                 <p className="text-green-800 font-medium">
-                  Message sent successfully! I'll get back to you soon.
+                  Message delivered! I'll get back to you as soon as I can.
                 </p>
               </div>
             )}
@@ -409,7 +261,7 @@ const Contact: React.FC = () => {
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-lightBlue mb-3">Connect With Me</h2>
         <p className="text-lighterBlue mb-8">
-          Prefer social media? Find me on these platforms!
+          Find me throughout the internet!
         </p>
       </div>
 
