@@ -69,40 +69,40 @@ const Home: React.FC = () => {
       {/* Quick Stats/Skills */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
         <div className="
-          bg-coral p-6 rounded-xl
+          bg-white p-6 rounded-xl
           border border-red shadow-xl 
           hover:shadow-2xl hover:border-blue-500 hover:-translate-y-1 
           transition-all duration-300"
         >
           <FaExplosion className="w-8 h-8 text-blue-400 mb-3" />
           <h3 className="text-xl font-semibold text-blue-400 mb-2">Fail, Learn, Repeat</h3>
-          <p className="text-white">
+          <p className="text-lighterBlue">
             Failure is a constant yet invaluable teacher. Some of the greatest inventions came from mistakes. Seeking perfection often hinders progress.
           </p>
         </div>
 
         <div className="
-          bg-coral p-6 rounded-xl 
+          bg-white p-6 rounded-xl 
           border border-red shadow-xl 
           hover:shadow-2xl hover:border-purple-500 hover:-translate-y-1 
           transition-all duration-300"
         >
           <GrGrow className="w-8 h-8 text-purple-400 mb-3" />
           <h3 className="text-xl font-semibold text-purple-400 mb-2">Changes Big and Small</h3>
-          <p className="text-white">
+          <p className="text-purple-400/80">
             Even the smallest wins can feel like big victories. Growth is growth no matter the size. Embrace change as an opportunity to evolve and improve, both personally and professionally.
           </p>
         </div>
         
         <div className="
-          bg-coral p-6 rounded-xl 
+          bg-white p-6 rounded-xl 
           border border-red shadow-xl 
           hover:shadow-2xl hover:border-green-500 hover:-translate-y-1 
           transition-all duration-300"
         >
-          <MapPin className="w-8 h-8 text-green-400 mb-3" />
-          <h3 className="text-xl font-semibold text-green-400 mb-2">Having Fun</h3>
-          <p className="text-white">
+          <MapPin className="w-8 h-8 text-green-500 mb-3" />
+          <h3 className="text-xl font-semibold text-green-500 mb-2">Having Fun</h3>
+          <p className="text-green-400">
             The journey is much more enjoyable when you learn to enjoy the views. Tunnel-vision rarely leads to happiness so why limit yourself when there is so much to explore? Take the road less traveled and you might find a better destination at the end.
           </p>
         </div>
