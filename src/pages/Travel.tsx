@@ -45,9 +45,24 @@ const Travel: React.FC = () => {
       location: 'London, UK'
     },
     {
-      src: londonBigBen,
-      caption: 'Westminster Palace and the River Thames',
-      location: 'London, UK'
+      src: notreDame,
+      caption: 'Notre-Dame Cathedral',
+      location: 'Paris, France'
+    },
+    {
+      src: notreDameInside,
+      caption: 'Interior of Notre-Dame Cathedral',
+      location: 'Paris, France'
+    },
+    {
+      src: wingedVictory,
+      caption: 'Winged Victory of Samothrace',
+      location: 'Paris, France'
+    },
+    {
+      src: sacreCoeur,
+      caption: 'Sacré-Cœur Basilica',
+      location: 'Paris, France'
     }
   ];
 
