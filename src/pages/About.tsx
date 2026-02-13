@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { X } from 'lucide-react';
 import profileImage from '../assets/travel/londonTowerBridge.jpg';
 
 import honkaiImage from '../assets/favorites/games/Honkai Star Rail.png'
@@ -16,7 +17,19 @@ import goodPlaceImage from '../assets/favorites/shows/The Good Place.jpg'
 import fmaImage from '../assets/favorites/shows/Fullmetal Alchemist Brotherhood.webp'
 import hillHouseImage from '../assets/favorites/shows/Hill House.jpg'
 
+import corvusImage from '../assets/favorites/music/corvusVolare.png'
+import questionsImage from '../assets/favorites/music/questions.png'
+import endlesslyImage from '../assets/favorites/music/endlessly.png'
+
 const About: React.FC = () => {
+  const [selectedSong, setSelectedSong] = useState<{title: string; artist: string; image: string} | null>(null);
+
+  const songs = [
+    { title: 'Corvus Volare', artist: 'RYS', image: corvusImage },
+    { title: 'Questions', artist: 'Presley Reiger ft. Ari Abdul', image: questionsImage },
+    { title: 'Endlessly', artist: 'Chanpan', image: endlesslyImage },
+  ];
+
   return (
     <div className="min-h-screen bg-sand">
       <main className="pt-20">
@@ -244,11 +257,11 @@ const About: React.FC = () => {
               </div>
 
               {/* Favorite TV Shows */}
-              <div className="bg-white p-6 rounded-xl border-2 border-coral shadow-lg">
+              <div className="bg-white p-6 rounded-xl border-2 border-coral shadow-lg md:col-span-2">
                 <h3 className="text-2xl font-bold text-teal mb-6 flex items-center gap-3">
                   📺 Favorite TV Shows
                 </h3>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <div className="group cursor-pointer">
                     <div className="aspect-[2/3] rounded-lg overflow-hidden mb-2 border-2 border-coral">
                       <img 
@@ -300,19 +313,31 @@ const About: React.FC = () => {
               </div>
 
               {/* Favorite Music/Artists */}
-              <div className="bg-white p-8 rounded-xl border-2 border-coral shadow-lg">
-                <h3 className="text-2xl font-bold text-teal mb-6 flex items-center gap-3">
+              <div className="bg-white p-6 rounded-xl border-2 border-coral shadow-lg md:col-span-2 max-w-md mx-auto w-full">
+                <h3 className="text-2xl font-bold text-teal mb-6 flex items-center gap-3 justify-center">
                   🎵 Favorite Songs
                 </h3>
-                <ul className="space-y-3 text-navy mb-6">
-                  <li className="flex items-start gap-3">
-                    <span className="text-lightBlue font-bold">•</span>
-                    <div>
-                      <span className="font-semibold"></span>
-                      <p className="text-sm text-lighterBlue"></p>
-                    </div>
-                  </li>
-                </ul>
+                <div className="space-y-3 mb-6">
+                  {songs.map((song, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setSelectedSong(song)}
+                      className="w-full p-4 bg-sand/50 hover:bg-coral/20 rounded-lg transition-all hover:shadow-md text-left group"
+                    >
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h4 className="font-semibold text-navy group-hover:text-red transition-colors">
+                            {song.title}
+                          </h4>
+                          <p className="text-sm text-lighterBlue">{song.artist}</p>
+                        </div>
+                        <div className="text-2xl group-hover:scale-110 transition-transform">
+                          🎵
+                        </div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
                 <a
                   href="https://open.spotify.com/user/vjasf8whixiqy2gv1bz3jos00?si=LzMwTwGBRtejHX_yLchdvQ"
                   target="_blank"
@@ -356,21 +381,58 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Call to Action */}
-          <div className="text-center bg-gradient-to-r from-teal to-lightBlue p-12 rounded-xl shadow-2xl">
+          {/* Contact Form Connection */}
+          <div className="text-center bg-teal p-12 rounded-xl shadow-2xl">
             <h2 className="text-3xl font-bold text-white mb-4">Let's Connect!</h2>
             <p className="text-white text-lg mb-6">
               Interested in working together or just want to chat? I'd love to hear from you!
             </p>
             <a
               href="/contact"
-              className="inline-block px-8 py-4 bg-white text-teal rounded-lg font-bold text-lg hover:bg-coral hover:text-white transition-all hover:scale-105"
+              className="inline-block px-8 py-4 bg-lighterBlue text-white rounded-lg font-bold text-lg hover:bg-lightBlue transition-all hover:scale-105"
             >
               Get In Touch
             </a>
           </div>
         </section>
       </main>
+
+      {/* Song Modal */}
+      {selectedSong && (
+        <div 
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedSong(null)}
+        >
+          <div 
+            className="bg-white rounded-2xl shadow-2xl w-full max-w-[80vw] sm:max-w-sm max-h-[90vh] overflow-hidden flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="bg-teal p-4 sm:p-6 flex justify-between items-center">
+              <div>
+                <h3 className="text-lg sm:text-2xl font-bold text-white">{selectedSong.title}</h3>
+                <p className="text-sm sm:text-base text-white/90">{selectedSong.artist}</p>
+              </div>
+              <button
+                onClick={() => setSelectedSong(null)}
+                className="p-2 hover:bg-white/20 rounded-lg transition-colors"
+              >
+                <X className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+              </button>
+            </div>
+
+            {/* Album Cover */}
+            <div className="p-4 sm:p-6 flex-1 flex items-center justify-center overflow-hidden">
+              <div className="rounded-xl overflow-hidden border-4 border-teal shadow-2xl bg-sand max-h-full">
+                <img
+                  src={selectedSong.image}
+                  alt={`${selectedSong.title} album cover`}
+                  className="w-full h-auto object-contain max-h-[60vh]"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
