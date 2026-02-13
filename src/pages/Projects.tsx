@@ -24,7 +24,7 @@ const Projects: React.FC = () => {
       id: 1,
       title: 'Pathway: An AI-Assisted Small Business Helper',
       description: 'Full-stack application providing AI-driven solutions for small business owners',
-      longDescription: 'A comprehensive e-commerce platform featuring product management, shopping cart, secure checkout with Stripe integration, and an admin dashboard for inventory management.',
+      longDescription: 'A comprehensive full-stack application designed to assist small business owners with document management. Translation features are available with additional functions such as logo generation, website mockup creation, and more.',
       technologies: ['React', 'Python', 'OpenAI API', 'Google Cloud Functions', "Google APIs", 'Firebase'],
       category: 'Full Stack',
       githubUrl: 'https://github.com/yourusername/ecommerce',
